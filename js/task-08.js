@@ -1,6 +1,6 @@
 const formEl = document.querySelector(".login-form");
 
-const handlValidation = (e) => {
+const handlLoginForm = (e) => {
 	e.preventDefault();
 	const {
 		elements: { email, password },
@@ -9,13 +9,17 @@ const handlValidation = (e) => {
 	if (email.value === "" || password.value === "") {
 		return alert("Заполни все поля");
 	}
-	const userObj = { email: email.value, password: password.value };
+	const userObjInner = { email: email.value, password: password.value };
 	console.log({ email: email.value, password: password.value });
 	e.target.reset();
 
-	const userObjReturn = () => userObj;
+	const userObjReturn = () => userObjInner;
 	return userObjReturn();
 };
 
-formEl.addEventListener("submit", handlValidation);
-console.log(userObj);
+const userObj = formEl.addEventListener("submit", handlLoginForm);
+if (!userObj) {
+	console.log("Введи логин и пароль))");
+} else {
+	console.log(userObj);
+}
