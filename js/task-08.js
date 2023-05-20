@@ -19,7 +19,8 @@ const handlLoginForm = (e) => {
 
 const userObj = formEl.addEventListener("submit", handlLoginForm);
 if (!userObj) {
-	console.log("Введи логин и пароль))");
+	// console.log("Введи логин и пароль))");
+	alert("Введи логин и пароль))");
 } else {
 	console.log(userObj);
 }
