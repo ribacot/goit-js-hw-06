@@ -9,18 +9,9 @@ const handlLoginForm = (e) => {
 	if (email.value === "" || password.value === "") {
 		return alert("Заполни все поля");
 	}
-	const userObjInner = { email: email.value, password: password.value };
-	console.log({ email: email.value, password: password.value });
+	const userObj = { email: email.value, password: password.value };
+	console.log(userObj);
 	e.target.reset();
-
-	const userObjReturn = () => userObjInner;
-	return userObjReturn();
 };
 
-const userObj = formEl.addEventListener("submit", handlLoginForm);
-if (!userObj) {
-	// console.log("Введи логин и пароль))");
-	alert("Введи логин и пароль))");
-} else {
-	console.log(userObj);
-}
+formEl.addEventListener("submit", handlLoginForm);

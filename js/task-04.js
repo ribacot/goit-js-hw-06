@@ -5,10 +5,6 @@ const counterValueEl = counterEl.children[1];
 let counterValue = 0;
 
 const decrementFn = (e) => {
-	if (counterValue <=0) {
-		return;
-	};
-	console.log(e)
 	counterValue -= 1;
 	counterValueEl.textContent = counterValue;
 };

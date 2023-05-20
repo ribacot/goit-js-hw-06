@@ -3,7 +3,7 @@ const inputElLength = Number(inputEl.dataset.length);
 
 const handlHasValidForm = (event) => {
 	const evt = event.currentTarget;
-	if (evt.value.length < inputElLength) {
+	if (evt.value.trim().length !== inputElLength) {
 		evt.classList.remove("valid");
 		evt.classList.add("invalid");
 		return;
